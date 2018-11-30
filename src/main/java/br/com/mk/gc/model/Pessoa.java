@@ -5,7 +5,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
-import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -36,7 +35,7 @@ public class Pessoa extends BaseEntity {
     private SexoEnum sexo;
 
     @OneToOne(mappedBy = "pessoa", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private Documento documento;
+    private DocumentoPessoal documento;
 
     @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Email> emails;

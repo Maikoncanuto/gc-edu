@@ -16,7 +16,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity(name = "TB_DOCUMENTO_PESSOA")
 @AttributeOverride(name = "ID", column = @Column(name = "ID_DOCUMENTO_PESSOA"))
-public class Documento extends BaseEntity {
+public class DocumentoPessoal extends BaseEntity {
 
     @CPF
     @Size(max = 20, message = "O campo CPF pode ter no máximo 20 caracteres.")
