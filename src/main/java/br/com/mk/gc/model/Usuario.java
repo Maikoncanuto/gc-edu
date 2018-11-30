@@ -16,32 +16,19 @@ import java.util.Collection;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "TB_USUARIO")
+@AttributeOverride(name = "ID", column = @Column(name = "ID_USUARIO", nullable = false, unique = true))
 public class Usuario extends BaseEntity implements UserDetails {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_USUARIO")
-    private Long id;
 
     @Size(max = 150, message = "O campo username pode ter no máximo 150 de tamanho.")
     @Column(name = "USERNAME", length = 150, unique = true, nullable = false)
     private String username;
 
-    @Size(max = 250, message = "O campo nome pode ter no máximo 250 de tamanaho.")
-    @Column(name = "NOME", length = 250, nullable = false)
-    private String name;
-
-    @Size(max = 250, message = "O campo e-mail pode ter no máximo 250 de tamanho.")
-    @Email
-    @Column(name = "EMAIL", unique = true, nullable = false, length = 250)
-    private String email;
-
     @Size(max = 255, message = "O campo senha pode ter no máximo 255 de tamanho.")
     @Column(name = "PASSWORD", length = 255, nullable = false)
     private String password;
 
-    @Column(name = "ATIVO")
-    private Boolean ativo;
+    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Pessoa pessoa;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "TB_USUARIO_PERFIL",

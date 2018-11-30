@@ -25,7 +25,7 @@ public class TokenAuthenticationService {
         final Map<String, Object> mapaAutenticacao = new HashMap<>();
         mapaAutenticacao.put("id", usuario.getId());
         mapaAutenticacao.put("username", usuario.getUsername());
-        mapaAutenticacao.put("name", usuario.getName());
+        mapaAutenticacao.put("name", usuario.getPessoa().getNome());
         mapaAutenticacao.put("roles", usuario.getAuthorities());
 
         final String JWT = Jwts.builder()

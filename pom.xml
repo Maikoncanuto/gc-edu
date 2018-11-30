@@ -9,19 +9,22 @@
     <packaging>jar</packaging>
 
     <name>gc</name>
-    <description></description>
+    <description>Projeto de gerenciamento educacional</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.1.1.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+
+        <stella.version>2.1.2</stella.version>
+        <jsonwebtoken.version>0.7.0</jsonwebtoken.version>
     </properties>
 
     <dependencies>
@@ -70,10 +73,24 @@
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
-            <version>0.7.0</version>
+            <version>${jsonwebtoken.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>br.com.caelum.stella</groupId>
+            <artifactId>caelum-stella-core</artifactId>
+            <version>${stella.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>br.com.caelum.stella</groupId>
+            <artifactId>caelum-stella-hibernate-user-types</artifactId>
+            <version>${stella.version}</version>
         </dependency>
     </dependencies>
 
@@ -85,6 +102,4 @@
             </plugin>
         </plugins>
     </build>
-
-
 </project>
