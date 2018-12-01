@@ -1,6 +1,5 @@
 package br.com.mk.gc.security;
 
-import br.com.mk.gc.model.Usuario;
 import br.com.mk.gc.service.UsuarioService;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;

@@ -15,7 +15,7 @@ public class UsuarioService {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public Usuario findUsernameByAtivo(String username){
+    public Usuario findUsernameByAtivo(final String username){
         return usuarioRepository.findUsuarioByUsername(username);
     }
 
