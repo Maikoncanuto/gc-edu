@@ -30,6 +30,10 @@ public class Pessoa extends BaseEntity {
     @Column(name = "DATA_NASCIMENTO")
     private Date dataNascimento;
 
+    @Size(max = 200, message = "O campo PROFISSÃO pode ter no máximo 200 caracteres.")
+    @Column(name = "PROFISSAO", nullable = true, length = 200)
+    private String profissao;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "SEXO")
     private SexoEnum sexo;
