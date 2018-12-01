@@ -1,16 +1,16 @@
 package br.com.mk.gc.service;
 
-import br.com.mk.gc.repository.IEmailRepository;
+import br.com.mk.gc.repository.EmailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class EmailService {
 
-    final IEmailRepository emailRepository;
+    final EmailRepository emailRepository;
 
     @Autowired
-    public EmailService(final IEmailRepository emailRepository){
+    public EmailService(final EmailRepository emailRepository){
         this.emailRepository = emailRepository;
     }
 

@@ -1,16 +1,16 @@
 package br.com.mk.gc.service;
 
-import br.com.mk.gc.repository.IPessoaRepository;
+import br.com.mk.gc.repository.PessoaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class PessoaService {
 
-    final IPessoaRepository pessoaRepository;
+    final PessoaRepository pessoaRepository;
 
     @Autowired
-    public PessoaService(final IPessoaRepository pessoaRepository){
+    public PessoaService(final PessoaRepository pessoaRepository){
         this.pessoaRepository = pessoaRepository;
     }
 
