@@ -1,5 +1,6 @@
 package br.com.mk.gc.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -25,6 +26,7 @@ public class Usuario extends BaseEntity implements UserDetails {
 
     @Size(max = 255, message = "O campo senha pode ter no máximo 255 de tamanho.")
     @Column(name = "PASSWORD", length = 255, nullable = false)
+    @JsonIgnore
     private String password;
 
     @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL, fetch = FetchType.EAGER)

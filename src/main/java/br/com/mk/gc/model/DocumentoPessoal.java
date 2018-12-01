@@ -11,11 +11,11 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "TB_DOCUMENTO_PESSOA")
 @AttributeOverride(name = "ID", column = @Column(name = "ID_DOCUMENTO_PESSOA"))
+@EqualsAndHashCode(callSuper = false)
 public class DocumentoPessoal extends BaseEntity {
 
     @CPF

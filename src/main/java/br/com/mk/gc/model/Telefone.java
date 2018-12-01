@@ -9,7 +9,7 @@ import javax.validation.constraints.Size;
 @Getter
 @Setter
 @ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper = false)
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity(name = "TB_TELEFONE")
